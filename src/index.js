@@ -9,7 +9,6 @@ const input = document.querySelector('input');
 const gallery = document.querySelector('.gallery');
 const btnMore = document.querySelector('.load-more');
 const newImages = new NewImages();
-console.log(newImages);
 
 form.addEventListener('submit', onSubmit);
 btnMore.addEventListener('click', onSubmitMore);
@@ -66,7 +65,7 @@ async function onSubmit(evt) {
   }
 }
 
-function onSubmitMore(evt) {
+function onSubmitMore() {
   newImages
     .fetchImage()
     .then(data => {
@@ -100,7 +99,7 @@ function onSubmitMore(evt) {
 }
 
 function createMarkup(hits) {
-  const markup = hits
+  return (markup = hits
     .map(
       ({
         webformatURL,
@@ -134,8 +133,7 @@ function createMarkup(hits) {
      </div>`;
       }
     )
-    .join('');
-  return markup;
+    .join(''));
 }
 
 function clearHits() {
