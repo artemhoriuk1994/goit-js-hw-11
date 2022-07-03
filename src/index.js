@@ -99,7 +99,7 @@ function onSubmitMore() {
 }
 
 function createMarkup(hits) {
-  return (markup = hits
+  return hits
     .map(
       ({
         webformatURL,
@@ -133,7 +133,7 @@ function createMarkup(hits) {
      </div>`;
       }
     )
-    .join(''));
+    .join('');
 }
 
 function clearHits() {
